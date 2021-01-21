@@ -36,231 +36,99 @@
     <title>Prashant Pandey's Website</title>
     <link rel="icon" type="image/png" href="img/title.png">
   </head>
+<style>
+:root {
+  --primary-color: #45689e;
+  --secondary-color: #ce4088;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  z-index: 10;
+  background-image: repeating-linear-gradient(-45deg,
+    var(--primary-color),
+    var(--primary-color) 50px,
+    var(--secondary-color) 50px,
+    var(--secondary-color) 100px);
+}
+
+.board {
+  --deg: 5deg;
+  font-size: 3rem;
+  padding: 0.5em 1em;
+  background: var(--secondary-color);
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%) rotate(calc(-1 * var(--deg)));
+}
+
+@media screen and (min-width: 480px) {
+  .board {
+    font-size: 4rem;
+  }
+}
+
+.board::before {
+  content: '';
+  position: absolute;
+  top: -50vh;
+  height: 50vh;
+  display: block;
+  left: 30px;
+  right: 30px;
+  transform: skew(calc(-1 * var(--deg)));
+  border: dotted var(--primary-color);
+  border-width: 0 8px;
+  transform-origin: bottom left;
+  padding-bottom: 30px;
+}
+
+.board h1 {
+  margin: 0;
+  font-size: inherit;
+}
+
+.board h1::before,
+.board h1::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.board h1:before {
+  left: 24px;
+}
+
+.board h1:after {
+  right: 24px;
+}
+</style>
   <body>
 
-    <!-- navigation bar -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3">
-        <div class="container">
-          <a class="navbar-brand scroll-link" href="#home">
-            <img src="img/title.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-            Prashant
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link scroll-link" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link scroll-link" href="#resume">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link scroll-link" href="#portfolio">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link scroll-link" href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- home -->
-    <section id="home" class="website-section">
-      <div id="particles-js"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 justify-content-center">
-            <h1 id="name" class=" wow fadeIn">Prashant Pandey.</h1>
-            <p id="tagline" class=" wow fadeIn">I'm a Computer Enthusiest and Welcome to my Website.</p>
-            <a id="learn-more" class="scroll-link wow fadeIn" href="#resume"><i class="fa fa-angle-down"></i> Learn More</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- resume -->
-    <section id="resume" class="website-section">
-      <div class="container">
-        <div class="row">
-          <h2 class="title wow slideInUp">Hi, I am Prashant Pandey.</h2>
-          <p class="text-center about w-75 mx-auto wow fadeIn">I love to invest my time with computer. Just like any computer enthusiest, I am keenly interested in Ethical Hacking, Computer Progarmming and so on. Welcome to my world.</p>
-        </div>
-        <div class="row">
-          <h2 class="title wow fadeIn">And I love.</h2>
-        </div>
-        <div class="row pt-4 wow fadeIn">
-          <div class="col-md-4">
-            <div class="card" style="max-width: 18rem;">
-              <img src="img/programming.jpg" class="card-img-top" alt="Progarmming">
-              <div class="card-body">
-                <h5 class="card-title">Programming</h5>
-                <p class="card-text">I love python Progrmming. I have built many games and written problem solving programs.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card" style="max-width: 18rem;">
-              <img src="img/ehacking.jpg" class="card-img-top" alt="Progarmming">
-              <div class="card-body">
-                <h5 class="card-title">Ethical Hacking</h5>
-                <p class="card-text">I love python Progrmming. I have built many games and written problem solving programs.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card" style="max-width: 18rem;">
-              <img src="img/designing.jpg" class="card-img-top" alt="Progarmming">
-              <div class="card-body">
-                <h5 class="card-title">Designing</h5>
-                <p class="card-text">I love python Designing. I have designed many logos and written problem solving programs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio" class="website-section">
-      <div class="container">
-        <div class="row">
-          <h2 class="title wow slideInUp">What I have done?</h2>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="grid wow fadeIn">
-              <img src="img/terminaltetris.jpg" alt="Terminaltetris">
-              <div class="overlay">
-                <div class="text">Terminaltetris</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="grid wow fadeIn">
-              <img src="img/Ethical-Hacking.jpg" alt="Ethical-Hacking">
-              <div class="overlay">
-                <div class="text">Ethical Hacking Project</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="grid wow fadeIn">
-              <img src="img/main-q.png" alt="Main Q">
-              <div class="overlay">
-                <div class="text">Main Q</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="grid wow fadeIn">
-              <img src="img/Prevent-Identity-Theft.jpg" alt="Prevent-Identity-Theft">
-              <div class="overlay">
-                <div class="text">Prevent Identity Theft</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="grid wow fadeIn">
-              <img src="img/covid19.png" alt="Covid 19">
-              <div class="overlay">
-                <div class="text">Covit 19 Status</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="grid wow fadeIn">
-              <img src="img/python.jpg" alt="Python">
-              <div class="overlay">
-                <div class="text">Python Project</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="website-section">
-      <div class="container">
-        <div class="row">
-          <h2 class="title wow slideInUp">Say Hi to Me.</h2>
-        </div>
-
-        <form action="https://formspree.io/mailme.prashant07@gmail.com" method="POST" class="w-100">
-          <div class="row pt-4 wow fadeIn">
-            <div class="form-group col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Enter your name..">
-            </div>
-            <div class="form-group col-md-6">
-              <input type="email" name="email" class="form-control" placeholder="Enter your email..">
-            </div>
-            <div class="form-group col-md-12">
-              <textarea class="form-control" name="message" rows="3" placeholder="Enter your message.."></textarea>
-            </div>
-            <button type="submit" class="btn btn-block submit-message">Submit</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div class="row wow fadeIn">
-          <div class="col-md-5">
-            <ul>
-              <li><strong>Email: </strong>mailme.prashant07@gmail.com</li>
-              <li><strong>Phone: </strong>+9779842179516</li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <a href="#home" class="scroll-link back-to-top"><i class="fa fa-2x fa-arrow-circle-up"></i></a>
-          </div>
-          <div class="col-md-5">
-            <ul class="social">
-              <li class="social-link"><a href="https://www.facebook.com/prashantpandey" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-              <li class="social-link"><a href="https://www.github.com/prashantpandey" target="_blank"><i class="fa fa-github-square"></i></a></li>
-              <li class="social-link"><a href="https://www.instagram.com/prashantpandey" target="_blank"><i class="fa fa-instagram"></i></a></li>
-              <li class="social-link"><a href="https://www.linkedin.com/prashantpandey" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row wow fadeIn">
-          <div class="col-md-6">
-            <a href="https://www.rabinkalikote.com" target="_blank">Designed and Built by Rabin K. Kaikote.</a>
-          </div>
-          <div class="col-md-6">
-            <p>Copyright (c) Prashant Pandey.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- JS Libraries -->
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/smooth-scroll.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script>
-    <script type="text/javascript" src="js/particles.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-
-    <script type="text/javascript">
-      new WOW().init(); //activation of Wow.js
-      // Making the page scrolling when the link is clicked.
-      $('.scroll-link').on('click', function(event){
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top-50}, 750);
-      });
-
-      $('.nav-item').on('click', function(){
-        $('.nav-item').removeClass('active');
-        $(this).addClass('active');
-      });
-    </script>
-
+    <div class="board">
+  <h1>Hello World</h1>
+</div>
   </body>
 </html>
